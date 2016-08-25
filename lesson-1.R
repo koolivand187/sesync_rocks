@@ -10,10 +10,11 @@ first<- function(df) {         # The arguments, or input, to the function goes h
    result  <-df[[1,1]]                 # The body of the function goes here.
    return(result)          # Any output of the function goes here.
 }
-aa<- 3
-## Change the url for the origin repo
 
-system('git remote set-url origin ...')
+## Change the url for the origin repo
+system('git config --global user.email "kolivand@umd.edu"')
+system('git config --global user.name "Abdollah koolivand"')
+system('git remote set-url origin git@github.com:koolivand187/sesync_rocks.git')
 
 ## Install missing packages
 
@@ -21,9 +22,9 @@ requirements <- c('tidyr',
                   'ggplot2',
                   'RSQLite',
                   'rmarkdown')
-missing <- setdiff(...,
+missing <- setdiff(requirements,
                    rownames(installed.packages()))
 
-if (...) {
+if (length(missing) !=0) {
   install.packages(missing)
 }
